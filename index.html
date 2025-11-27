@@ -3,1714 +3,279 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>navidapam | Navidad premium: ropa, decoración, diseños y más</title>
-  <meta name="description" content="navidapam: tu web premium de Navidad con ideas de ropa, trajes, decoración, origami, diseño gráfico y recursos descargables." />
+  <title>navidapam • Navidad Premium</title>
 
-  <!-- SEO básico -->
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="navidapam: sitio navideño premium con decoración, ropa, ideas, recursos originales, imágenes reales descargables y contenido optimizado para Google Search y Google AdSense." />
+  <meta name="theme-color" content="#B60000" />
 
-  <!--
-    CUANDO TENGAS TU CUENTA DE ADSENSE, PEGA AQUÍ TU CÓDIGO REAL.
-    EJEMPLO (NO USAR TAL CUAL):
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=TU_ID_PUB" crossorigin="anonymous"></script>
-  -->
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4027729234815917"
+    crossorigin="anonymous"></script>
 
+  <!-- Estilo Premium Tradicional (Rojo - Verde - Dorado) -->
   <style>
-    :root {
-      --bg: #020617;
-      --bg-alt: #050816;
-      --card-bg: #020617;
-      --accent: #f97316;
-      --accent-soft: rgba(249, 115, 22, 0.12);
-      --accent-strong: #fbbf24;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius-xl: 1.5rem;
-      --radius-lg: 1.1rem;
-      --shadow-soft: 0 24px 55px rgba(0, 0, 0, 0.6);
-      --transition: 0.25s ease;
-      --max-width: 1120px;
-      --nav-height: 70px;
-    }
-
-    * ,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, #1e293b 0, #020617 55%) fixed;
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
     body {
-      min-height: 100vh;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* NAVBAR PREMIUM */
-
-    .shell {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(20px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.96), rgba(15,23,42,0.6), transparent);
-      border-bottom: 1px solid rgba(148,163,184,0.2);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: var(--nav-height);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-    }
-
-    .brand-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #fecaca 0, #b91c1c 35%, #0f172a 80%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 1px rgba(248,250,252,0.1), 0 24px 50px rgba(127,29,29,0.8);
-      font-size: 1.1rem;
-    }
-
-    .brand span {
-      background: linear-gradient(to right, #fee2e2, #fbbf24);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      list-style: none;
-      padding: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
       margin: 0;
+      background: #faf9f8;
+      color: #333;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.85rem;
-      padding: 0.35rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: var(--transition);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    header {
+      background: linear-gradient(to right, #b60000, #d20000);
+      padding: 20px;
+      color: white;
+      text-align: center;
+      border-bottom: 5px solid gold;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-      border-color: rgba(248,250,252,0.18);
-      background: rgba(15,23,42,0.9);
-    }
-
-    .nav-cta {
-      display: none;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.35rem;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 2.5rem 0 2.5rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(248,113,22,0.15);
-      border: 1px solid rgba(248,113,22,0.4);
-      color: #fed7aa;
-      font-size: 0.8rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #f97316;
-      box-shadow: 0 0 0 4px rgba(248,113,22,0.4);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.3rem, 4vw, 3rem);
-      line-height: 1.05;
-      margin: 0 0 0.75rem;
-      letter-spacing: -0.03em;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(to right, #f97316, #fde68a);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-sub {
-      margin: 0 0 1.4rem;
-      color: var(--muted);
-      max-width: 34rem;
-      font-size: 0.98rem;
-    }
-
-    .hero-actions {
+    nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.5);
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.8rem;
-    }
-
-    .pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
-    }
-
-    .hero-media {
-      border-radius: 1.9rem;
-      padding: 0.18rem;
-      background: radial-gradient(circle at 0 0, #f97316 0, transparent 45%),
-                  radial-gradient(circle at 100% 100%, #22c55e 0, transparent 45%),
-                  #020617;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-media-inner {
-      border-radius: 1.7rem;
-      background: radial-gradient(circle at top, rgba(148,163,184,0.5) 0, #020617 55%);
-      border: 1px solid rgba(148,163,184,0.25);
-      overflow: hidden;
-      position: relative;
-      isolation: isolate;
-    }
-
-    .hero-main-img {
-      height: 270px;
-      width: 100%;
-      object-fit: cover;
-      transform: scale(1.02);
-      filter: saturate(1.1);
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      padding: 0.55rem 0.8rem;
-      border-radius: 1.2rem;
-      background: rgba(15,23,42,0.92);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(148,163,184,0.4);
-      font-size: 0.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
-    .hero-badge span {
-      color: var(--muted);
-      font-size: 0.7rem;
-    }
-
-    .hero-badge strong {
-      font-size: 0.95rem;
-    }
-
-    /* BOTONES */
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      padding: 0.6rem 1.1rem;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      font-weight: 500;
-      cursor: pointer;
+      gap: 20px;
+      background: #8a0000;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
       text-decoration: none;
-      transition: var(--transition);
-      white-space: nowrap;
+      font-weight: bold;
     }
 
-    .btn-primary {
-      background: linear-gradient(to right, #f97316, #fbbf24);
-      color: #111827;
-      box-shadow: 0 18px 45px rgba(248,113,22,0.6);
+    h2 {
+      color: #b60000;
+      border-left: 8px solid gold;
+      padding-left: 10px;
     }
-
-    .btn-primary:hover {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: rgba(15,23,42,0.9);
-      border-color: rgba(148,163,184,0.55);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(30,41,59,0.95);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border-color: rgba(148,163,184,0.5);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15,23,42,0.9);
-      color: var(--text);
-    }
-
-    .btn-sm {
-      padding: 0.35rem 0.7rem;
-      font-size: 0.78rem;
-    }
-
-    /* SECCIONES */
 
     .section {
-      padding: 2.8rem 0 2.3rem;
+      max-width: 1050px;
+      margin: auto;
+      padding: 30px 15px;
     }
 
-    .section-alt {
-      background: radial-gradient(circle at top, rgba(30,64,175,0.4) 0, rgba(15,23,42,0.95) 55%, #020617 100%);
-    }
-
-    .section-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin-bottom: 1.9rem;
-    }
-
-    .section-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #f97316;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      margin: 0;
-      letter-spacing: -0.02em;
-    }
-
-    .section-sub {
-      margin: 0;
-      color: var(--muted);
-      max-width: 32rem;
-      font-size: 0.9rem;
-    }
-
-    /* GRID CARDS */
-
-    .grid-3 {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.4rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: radial-gradient(circle at top left, rgba(248,113,22,0.13) 0, var(--card-bg) 52%);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(30,64,175,0.6);
-      box-shadow: var(--shadow-soft);
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-      position: relative;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 0 0, rgba(248,250,252,0.2) 0, transparent 55%);
-      opacity: 0;
-      transition: var(--transition);
-      pointer-events: none;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(248,250,252,0.6);
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card-img {
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(15,23,42,0.9);
-    }
-
-    .card-img img {
+    .card img {
       width: 100%;
-      height: 190px;
-      object-fit: cover;
-      transition: transform 0.4s ease;
     }
 
-    .card:hover .card-img img {
-      transform: scale(1.06);
-    }
-
-    .card-body {
-      padding: 0.9rem 1rem 1rem;
-    }
-
-    .card-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(248,250,252,0.65);
-      margin-bottom: 0.3rem;
-    }
-
-    .card h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.02rem;
-    }
-
-    .card p {
-      margin: 0 0 0.7rem;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-top: 0.2rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    /* GALERÍA DESCARGABLE */
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      background: rgba(15,23,42,0.98);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(30,64,175,0.7);
-      overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.8);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .gallery-img-wrap {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gallery-img-wrap img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      transition: transform 0.45s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.07);
-    }
-
-    .gallery-caption {
-      padding: 0.7rem 0.75rem 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-    }
-
-    .gallery-format {
-      font-size: 0.72rem;
-      color: var(--muted);
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      padding: 0.15rem 0.5rem;
-    }
-
-    /* SECCIÓN ADSENSE / LICENCIAS / FAQ */
-
-    .note-box {
-      border-radius: var(--radius-xl);
-      padding: 1.2rem 1.1rem;
-      border: 1px dashed rgba(248,250,252,0.4);
-      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.7));
-      font-size: 0.86rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
-    }
-
-    .note-box strong {
-      color: var(--accent-strong);
-    }
-
-    .badge-mini {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.76rem;
-      background: rgba(22,163,74,0.18);
-      border: 1px solid rgba(22,163,74,0.5);
-      color: #bbf7d0;
-      margin-bottom: 0.35rem;
-    }
-
-    .badge-mini span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(22,163,74,0.45);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .faq-item {
-      border-radius: 1rem;
-      border: 1px solid rgba(30,64,175,0.7);
-      background: rgba(15,23,42,0.96);
-      padding: 0.9rem 1rem;
-      font-size: 0.86rem;
-    }
-
-    .faq-item h3 {
-      margin: 0 0 0.35rem;
-      font-size: 0.92rem;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    /* ADSENSE BLOQUE DEMO (SIN CÓDIGO REAL) */
-
-    .ads-block {
-      border-radius: 1.3rem;
-      padding: 0.8rem 1rem;
-      background: var(--accent-soft);
-      border: 1px dashed rgba(248,113,22,0.7);
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.9rem;
-    }
-
-    .ads-block-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #fed7aa;
-    }
-
-    /* FOOTER */
-
-    .footer {
-      border-top: 1px solid rgba(15,23,42,0.9);
-      background: #020617;
-      padding: 1.6rem 0 2.2rem;
-      margin-top: 2.3rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .footer-links a {
-      color: var(--muted);
+    .card a {
+      display: block;
+      background: #b60000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    .footer-links a:hover {
-      color: var(--accent);
+    footer {
+      margin-top: 50px;
+      background: #111;
+      color: #ddd;
+      padding: 25px;
+      text-align: center;
+      font-size: 14px;
     }
 
-    /* COOKIE BANNER */
-
-    .cookie-banner {
-      position: fixed;
-      inset-inline: 0;
-      bottom: 0;
-      z-index: 50;
-      display: none;
-      justify-content: center;
-      pointer-events: none;
+    /* Estilos legales */
+    .legal-box {
+      background: #fff5f5;
+      border: 1px solid #ffd2d2;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 40px;
     }
 
-    .cookie-inner {
-      pointer-events: auto;
-      max-width: 680px;
-      width: calc(100% - 2.2rem);
-      margin: 0 auto 1.1rem;
-      background: rgba(15,23,42,0.98);
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.6);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.9);
-      padding: 0.95rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      font-size: 0.8rem;
-    }
-
-    .cookie-inner p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .cookie-actions {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    /* COOKIE MODAL */
-
-    .cookie-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(15,23,42,0.75);
-      backdrop-filter: blur(12px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 60;
-    }
-
-    .cookie-modal-content {
-      background: #020617;
-      border-radius: 1.4rem;
-      padding: 1.2rem 1.3rem;
-      max-width: 430px;
-      width: calc(100% - 2.5rem);
-      border: 1px solid rgba(148,163,184,0.6);
-      box-shadow: 0 30px 70px rgba(0,0,0,0.9);
-      font-size: 0.86rem;
-    }
-
-    .cookie-modal-content h2 {
-      margin: 0 0 0.45rem;
-      font-size: 1.1rem;
-    }
-
-    .cookie-modal-content p {
-      margin: 0 0 0.9rem;
-      color: var(--muted);
-    }
-
-    .cookie-option {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      margin-bottom: 0.4rem;
-      font-size: 0.85rem;
-    }
-
-    .cookie-modal-actions {
-      margin-top: 0.9rem;
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.5rem;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-media {
-        order: -1;
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .faq-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-links {
-        position: fixed;
-        inset-inline: 0;
-        top: var(--nav-height);
-        background: rgba(15,23,42,0.98);
-        backdrop-filter: blur(18px);
-        padding: 0.75rem 1.25rem 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        border-bottom: 1px solid rgba(30,64,175,0.7);
-        transform: translateY(-120%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-      }
-
-      .nav-links.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-cta {
-        display: none;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .cookie-inner {
-        width: calc(100% - 1.4rem);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .gallery-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero {
-        padding-top: 2rem;
-      }
+    pre {
+      background: #f0f0f0;
+      padding: 15px;
+      white-space: pre-wrap;
+      border-radius: 10px;
+      overflow: auto;
     }
   </style>
 </head>
+
 <body>
-  <!-- BANNER COOKIES -->
-  <div class="cookie-banner" id="cookie-banner" aria-label="Aviso de cookies">
-    <div class="cookie-inner">
-      <p>
-        En <strong>navidapam</strong> usamos cookies para analizar el tráfico y, cuando lo habilites, mostrar anuncios personalizados (Google AdSense).
-        Puedes aceptar todas o configurar tus preferencias.
-      </p>
-      <div class="cookie-actions">
-        <button class="btn btn-secondary btn-sm" id="cookie-settings-btn">Configurar</button>
-        <button class="btn btn-primary btn-sm" id="cookie-accept-all-btn">Aceptar todo</button>
-      </div>
+
+<header>
+  <h1>🎄 navidapam • Navidad Premium 🎁</h1>
+  <p>El sitio navideño más completo: decoración, ideas, ropa, diseño y recursos descargables para tus fiestas.</p>
+</header>
+
+<nav>
+  <a href="#decoracion">Decoración</a>
+  <a href="#ropa">Ropa navideña</a>
+  <a href="#galeria">Galería Premium</a>
+  <a href="#legal">Legal</a>
+</nav>
+
+<!-- DECORACIÓN -->
+<section class="section" id="decoracion">
+  <h2>Decoración navideña premium</h2>
+  <p>
+    La Navidad es más que una fecha: es un ambiente. Esta sección reúne inspiración real,
+    con fotografías premium, cálidas y estéticas para que puedas recrear espacios elegantes,
+    acogedores y totalmente festivos.
+  </p>
+
+  <div class="gallery">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/257855/pexels-photo-257855.jpeg" alt="Árbol premium con dorados">
+      <a download href="https://images.pexels.com/photos/257855/pexels-photo-257855.jpeg">Descargar imagen</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg" alt="Mesa navideña elegante">
+      <a download href="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg">Descargar imagen</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/7542624/pexels-photo-7542624.jpeg" alt="Fachada navideña">
+      <a download href="https://images.pexels.com/photos/7542624/pexels-photo-7542624.jpeg">Descargar imagen</a>
     </div>
   </div>
+</section>
 
-  <!-- MODAL COOKIES -->
-  <div class="cookie-modal" id="cookie-modal" aria-hidden="true">
-    <div class="cookie-modal-content">
-      <h2>Preferencias de cookies</h2>
-      <p>
-        Controla qué tipos de cookies quieres permitir. Las cookies estrictamente necesarias son indispensables
-        para el funcionamiento correcto de navidapam.
-      </p>
-      <label class="cookie-option">
-        <input type="checkbox" checked disabled />
-        Cookies necesarias (obligatorias)
-      </label>
-      <label class="cookie-option">
-        <input type="checkbox" id="cookie-ads-checkbox" checked />
-        Cookies de publicidad y personalización (Google AdSense)
-      </label>
-      <div class="cookie-modal-actions">
-        <button class="btn btn-secondary btn-sm" id="cookie-cancel-btn">Cancelar</button>
-        <button class="btn btn-primary btn-sm" id="cookie-save-btn">Guardar preferencias</button>
-      </div>
+<!-- ROPA -->
+<section class="section" id="ropa">
+  <h2>Ropa navideña premium</h2>
+  <p>
+    Outfits cálidos, familiares y fotogénicos para que tus celebraciones tengan estilo.
+    Desde suéteres clásicos hasta pijamas familiares para fotos memorables.
+  </p>
+
+  <div class="gallery">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/14930843/pexels-photo-14930843.jpeg" alt="Familia con suéteres">
+      <a download href="https://images.pexels.com/photos/14930843/pexels-photo-14930843.jpeg">Descargar imagen</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/19826614/pexels-photo-19826614.jpeg" alt="Pijamas familiares navideñas">
+      <a download href="https://images.pexels.com/photos/19826614/pexels-photo-19826614.jpeg">Descargar imagen</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/5708050/pexels-photo-5708050.jpeg" alt="Accesorios navideños">
+      <a download href="https://images.pexels.com/photos/5708050/pexels-photo-5708050.jpeg">Descargar imagen</a>
     </div>
   </div>
+</section>
 
-  <!-- NAV -->
-  <div class="nav-wrap">
-    <header class="shell nav">
-      <div class="brand">
-        <div class="brand-badge">🎄</div>
-        <span>navidapam</span>
-      </div>
+<!-- GALERÍA -->
+<section class="section" id="galeria">
+  <h2>Galería Premium Descargable</h2>
+  <p>
+    Imágenes reales en alta calidad, libres para uso comercial, perfectas para decorar, compartir,
+    imprimir o usar en tus proyectos. Cada fotografía proviene de bancos libres autorizados.
+  </p>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-        ☰
-      </button>
+  <div class="gallery">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/1303090/pexels-photo-1303090.jpeg" alt="Regalos premium">
+      <a download href="https://images.pexels.com/photos/1303090/pexels-photo-1303090.jpeg">Descargar imagen</a>
+    </div>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#ropa">Ropa</a></li>
-        <li><a href="#trajes">Trajes</a></li>
-        <li><a href="#decoracion">Decoración</a></li>
-        <li><a href="#origami">Origami</a></li>
-        <li><a href="#diseno">Diseño</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#licencias">Licencias</a></li>
-      </ul>
-    </header>
+    <div class="card">
+      <img src="https://images.pexels.com/photos/760810/pexels-photo-760810.jpeg" alt="Chocolate navideño">
+      <a download href="https://images.pexels.com/photos/760810/pexels-photo-760810.jpeg">Descargar imagen</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg" alt="Guirnalda navideña">
+      <a download href="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg">Descargar imagen</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN LEGAL COMPLETA -->
+<section class="section" id="legal">
+  <h2>Información Legal</h2>
+
+  <!-- AVISO LEGAL -->
+  <div class="legal-box">
+    <h3>Aviso Legal</h3>
+    <p>
+      El sitio web <strong>navidapam.online</strong> es un proyecto personal, sin relación con
+      marcas, empresas o instituciones externas. Todo el contenido generado en esta página es
+      original o utiliza material libre de derechos (Pexels/Unsplash) permitido para uso comercial.
+    </p>
+    <p>
+      El usuario se compromete a utilizar esta web conforme a la legislación vigente.
+    </p>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="shell hero-grid">
-      <div>
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Navidad premium en un solo lugar
-        </div>
-        <h1>
-          Todo tu universo navideño en<br />
-          <span>una web: navidapam</span>
-        </h1>
-        <p class="hero-sub">
-          Inspírate con ropa, trajes, decoración, origami y diseños navideños listos para descargar.
-          Pensado para posicionar en Google Search y preparado para integrar Google AdSense cuando tengas tu dominio.
-        </p>
-        <div class="hero-actions">
-          <a href="#galeria" class="btn btn-primary">Ir a recursos descargables</a>
-          <a href="#licencias" class="btn btn-secondary">Ver aviso de licencias</a>
-        </div>
-        <div class="pill">
-          <span class="pill-dot"></span>
-          Lista para subir a GitHub Pages y enviar a indexación en Google Search
-        </div>
-      </div>
+  <!-- POLÍTICA DE PRIVACIDAD -->
+  <div class="legal-box">
+    <h3>Política de Privacidad</h3>
+    <p>
+      En navidapam respetamos tu privacidad. Esta página puede utilizar cookies técnicas,
+      analíticas y, si das tu consentimiento, cookies publicitarias (Google AdSense).
+    </p>
+    <p>
+      No se recopilan datos personales identificables salvo que el usuario decida comunicarse
+      voluntariamente a través de formularios externos.
+    </p>
+  </div>
 
-      <aside class="hero-media">
-        <div class="hero-media-inner">
-          <!--
-            Reemplaza ESTA imagen por una tuya (ejemplo de placeholder).
-            Lo ideal es que la subas a tu repositorio (por ejemplo en /assets) y cambies la ruta.
-          -->
-          <img
-            class="hero-main-img"
-            src="https://images.pexels.com/photos/3058279/pexels-photo-3058279.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Salón elegante decorado para Navidad con árbol y luces cálidas"
-          />
-          <div class="hero-badge">
-            <span>Modo proyecto</span>
-            <strong>Listo para dominio propio &amp; AdSense</strong>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
+  <!-- POLÍTICA DE COOKIES -->
+  <div class="legal-box">
+    <h3>Política de Cookies</h3>
+    <p>
+      Este sitio utiliza cookies para mejorar la experiencia de navegación y mostrar anuncios personalizados.
+    </p>
+    <ul>
+      <li>Cookies necesarias: funcionamiento básico de la web.</li>
+      <li>Cookies analíticas: anónimas, para medir tráfico.</li>
+      <li>Cookies publicitarias: Google AdSense.</li>
+    </ul>
+  </div>
 
-  <main>
-    <!-- ROPA -->
-    <section id="ropa" class="section">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Ropa navideña</span>
-          <h2 class="section-title">Suéteres, pijamas y outfits navideños premium</h2>
-          <p class="section-sub">
-            Inspírate para crear colecciones de ropa navideña: desde suéteres clásicos hasta pijamas familiares
-            perfectas para fotos frente al árbol.
-          </p>
-        </header>
+  <!-- ROBOTS.TXT DESCARGABLE -->
+  <h3>Archivo robots.txt</h3>
+  <pre>
+User-agent: *
+Allow: /
+Sitemap: https://navidapam.online/sitemap.xml
+  </pre>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1667823/pexels-photo-1667823.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Suéter navideño rojo con patrón de renos y copos de nieve"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Suéter clásico</div>
-              <h3>Suéter rojo con renos</h3>
-              <p>
-                Ideal para cenas familiares, fotos casuales o reuniones de oficina con dress code festivo.
-              </p>
-              <div class="card-footer">
-                <span>Reemplaza con tu propia foto</span>
-                <a
-                  href="https://images.pexels.com/photos/1667823/pexels-photo-1667823.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
+  <!-- SITEMAP.XML DESCARGABLE -->
+  <h3>Archivo sitemap.xml</h3>
+  <pre>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://navidapam.online/</loc>
+    <priority>1.00</priority>
+  </url>
+</urlset>
+  </pre>
 
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/6328894/pexels-photo-6328894.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Familia con pijamas navideñas a cuadros"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Pijamas familia</div>
-              <h3>Pijamas coordinadas</h3>
-              <p>
-                Pijamas a cuadros o en tonos rojos y verdes para conseguir fotos navideñas memorables.
-              </p>
-              <div class="card-footer">
-                <span>Sube tu versión a GitHub</span>
-                <a
-                  href="https://images.pexels.com/photos/6328894/pexels-photo-6328894.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
+</section>
 
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/5708050/pexels-photo-5708050.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Gorro, calcetines y bufanda navideños"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Accesorios</div>
-              <h3>Detalles que completan el look</h3>
-              <p>
-                Gorros, bufandas, calcetines y guantes navideños para dar el toque final a cualquier outfit.
-              </p>
-              <div class="card-footer">
-                <span>Idea para sección de tienda</span>
-                <a
-                  href="https://images.pexels.com/photos/5708050/pexels-photo-5708050.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<footer>
+  © <span id="year"></span> navidapam — Sitio navideño premium.
+</footer>
 
-    <!-- TRAJES -->
-    <section id="trajes" class="section section-alt">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Trajes navideños</span>
-          <h2 class="section-title">Papá Noel, elfos y trajes temáticos</h2>
-          <p class="section-sub">
-            Crea colecciones de disfraces navideños para eventos, sesiones fotográficas, colegios y marcas.
-          </p>
-        </header>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1708601/pexels-photo-1708601.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Hombre con traje clásico de Papá Noel"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Papá Noel</div>
-              <h3>Traje clásico Santa</h3>
-              <p>
-                Abrigo rojo, cinturón negro, botas y gorro: el traje icónico para personificar la Navidad.
-              </p>
-              <div class="card-footer">
-                <span>Perfecto para campañas</span>
-                <a
-                  href="https://images.pexels.com/photos/1708601/pexels-photo-1708601.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1667813/pexels-photo-1667813.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Persona con traje de elfo verde y rojo"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Elfo</div>
-              <h3>Duendes ayudantes</h3>
-              <p>
-                Trajes divertidos en verde y rojo, ideales para animación, spots navideños o eventos infantiles.
-              </p>
-              <div class="card-footer">
-                <span>Recurso visual inspirador</span>
-                <a
-                  href="https://images.pexels.com/photos/1667813/pexels-photo-1667813.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1667814/pexels-photo-1667814.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Pareja con suéteres navideños a juego"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Parejas</div>
-              <h3>Looks coordinados</h3>
-              <p>
-                Diseños a juego para parejas o amigos, perfectos para redes sociales y sesiones de fotos.
-              </p>
-              <div class="card-footer">
-                <span>Contenido perfecto para IG</span>
-                <a
-                  href="https://images.pexels.com/photos/1667814/pexels-photo-1667814.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="ads-block">
-          <div class="ads-block-title">Espacio reservado para AdSense</div>
-          <!--
-            Cuando tengas cuenta de AdSense y el usuario haya aceptado cookies de publicidad,
-            podrás pegar aquí un bloque de anuncio, por ejemplo:
-
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="TU_ID_PUB"
-                 data-ad-slot="TU_SLOT"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          -->
-          Este bloque es solo demostrativo. Aún no carga anuncios reales hasta que añadas tu código.
-        </div>
-      </div>
-    </section>
-
-    <!-- DECORACIÓN -->
-    <section id="decoracion" class="section">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Decoración</span>
-          <h2 class="section-title">Ambientes navideños de alto nivel</h2>
-          <p class="section-sub">
-            Árboles, mesas, salones y exteriores con estética premium para inspirar proyectos de interiorismo,
-            fotografía o contenido para redes.
-          </p>
-        </header>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/257855/pexels-photo-257855.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Árbol de Navidad con luces cálidas y regalos"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Árbol principal</div>
-              <h3>Clásico dorado y rojo</h3>
-              <p>
-                Una combinación atemporal de bolas rojas, lazos dorados y luces cálidas para un salón elegante.
-              </p>
-              <div class="card-footer">
-                <span>Úsalo como portada</span>
-                <a
-                  href="https://images.pexels.com/photos/257855/pexels-photo-257855.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Mesa decorada para cena de Navidad con velas y vajilla elegante"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Mesa</div>
-              <h3>Cena navideña elegante</h3>
-              <p>
-                Vajilla blanca, detalles dorados y centros de mesa con velas para una experiencia gourmet.
-              </p>
-              <div class="card-footer">
-                <span>Perfecto para blogs</span>
-                <a
-                  href="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/7542624/pexels-photo-7542624.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Fachada de casa con luces de Navidad"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Exterior</div>
-              <h3>Fachada iluminada</h3>
-              <p>
-                Casas y balcones con guirnaldas de luces y figuras navideñas para crear ambiente desde la calle.
-              </p>
-              <div class="card-footer">
-                <span>Idea para decoración urbana</span>
-                <a
-                  href="https://images.pexels.com/photos/7542624/pexels-photo-7542624.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ORIGAMI -->
-    <section id="origami" class="section section-alt">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Origami & DIY</span>
-          <h2 class="section-title">Manualidades navideñas en papel</h2>
-          <p class="section-sub">
-            Modelos sencillos para enseñar en escuelas, talleres o contenido de YouTube, con figuras como
-            estrellas, árboles y tarjetas hechas a mano.
-          </p>
-        </header>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/3017171/pexels-photo-3017171.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Estrellas de papel colgando como decoración navideña"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Estrellas</div>
-              <h3>Estrellas de papel</h3>
-              <p>
-                Plegados geométricos para crear estrellas en tonos neutros o metalizados.
-              </p>
-              <div class="card-footer">
-                <span>DIY para reels</span>
-                <a
-                  href="https://images.pexels.com/photos/3017171/pexels-photo-3017171.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1303083/pexels-photo-1303083.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Pequeño árbol de Navidad hecho de papel"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Árboles</div>
-              <h3>Mini árboles de papel</h3>
-              <p>
-                Ideales para escritorios o centros de mesa, usando papel reciclado o cartulina de colores.
-              </p>
-              <div class="card-footer">
-                <span>Contenido educativo</span>
-                <a
-                  href="https://images.pexels.com/photos/1303083/pexels-photo-1303083.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1303094/pexels-photo-1303094.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Tarjeta navideña hecha a mano"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Tarjetas</div>
-              <h3>Tarjetas handmade</h3>
-              <p>
-                Tarjetas personalizadas con mensajes escritos a mano para acompañar tus regalos navideños.
-              </p>
-              <div class="card-footer">
-                <span>Descarga de inspiración</span>
-                <a
-                  href="https://images.pexels.com/photos/1303094/pexels-photo-1303094.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- DISEÑO GRÁFICO -->
-    <section id="diseno" class="section">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Diseño gráfico</span>
-          <h2 class="section-title">Fondos, banners y recursos visuales navideños</h2>
-          <p class="section-sub">
-            Crea paquetes descargables para redes sociales, encabezados de blog o campañas de email marketing
-            con estética navideña cuidada.
-          </p>
-        </header>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1666068/pexels-photo-1666068.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Fondo navideño con luces bokeh"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Fondos</div>
-              <h3>Fondos bokeh navideños</h3>
-              <p>
-                Imágenes con luces desenfocadas perfectas como fondo para textos o stories.
-              </p>
-              <div class="card-footer">
-                <span>Útil para banners</span>
-                <a
-                  href="https://images.pexels.com/photos/1666068/pexels-photo-1666068.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Regalos de Navidad sobre fondo rojo"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Creatividades</div>
-              <h3>Banners promocionales</h3>
-              <p>
-                Encabezados con regalos y espacio para texto, ideales para destacar ofertas navideñas.
-              </p>
-              <div class="card-footer">
-                <span>Recurso comercial</span>
-                <a
-                  href="https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img">
-              <img
-                src="https://images.pexels.com/photos/1303089/pexels-photo-1303089.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Elementos navideños planos como iconos"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-label">Iconos</div>
-              <h3>Pack de iconos navideños</h3>
-              <p>
-                Elementos planos (árboles, bolas, copos de nieve) para interfaces, apps o webs.
-              </p>
-              <div class="card-footer">
-                <span>Útil en UI/UX</span>
-                <a
-                  href="https://images.pexels.com/photos/1303089/pexels-photo-1303089.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  download
-                  class="btn btn-ghost btn-sm"
-                >
-                  Descargar
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALERÍA DESCARGABLE -->
-    <section id="galeria" class="section section-alt">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Galería descargable</span>
-          <h2 class="section-title">Recursos navideños listos para descargar</h2>
-          <p class="section-sub">
-            Usa estos recursos como inspiración y, cuando los sustituyas por tus propios archivos,
-            ofrece descargas en alta calidad para tu comunidad.
-          </p>
-        </header>
-
-        <div class="gallery-grid">
-          <figure class="gallery-item">
-            <div class="gallery-img-wrap">
-              <img
-                src="https://images.pexels.com/photos/1303090/pexels-photo-1303090.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Regalos envueltos con papel navideño"
-              />
-            </div>
-            <figcaption class="gallery-caption">
-              <div>
-                Regalos navideños premium
-                <div class="gallery-format">JPG</div>
-              </div>
-              <a
-                href="https://images.pexels.com/photos/1303090/pexels-photo-1303090.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                download
-                class="btn btn-ghost btn-sm"
-              >
-                Descargar
-              </a>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="gallery-img-wrap">
-              <img
-                src="https://images.pexels.com/photos/760810/pexels-photo-760810.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Taza de chocolate caliente con malvaviscos"
-              />
-            </div>
-            <figcaption class="gallery-caption">
-              <div>
-                Chocolate caliente hygge
-                <div class="gallery-format">JPG</div>
-              </div>
-              <a
-                href="https://images.pexels.com/photos/760810/pexels-photo-760810.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                download
-                class="btn btn-ghost btn-sm"
-              >
-                Descargar
-              </a>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="gallery-img-wrap">
-              <img
-                src="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Guirnalda navideña con luces"
-              />
-            </div>
-            <figcaption class="gallery-caption">
-              <div>
-                Guirnalda con luces cálidas
-                <div class="gallery-format">JPG</div>
-              </div>
-              <a
-                href="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                download
-                class="btn btn-ghost btn-sm"
-              >
-                Descargar
-              </a>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="gallery-img-wrap">
-              <img
-                src="https://images.pexels.com/photos/669211/pexels-photo-669211.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Niños decorando el árbol de Navidad"
-              />
-            </div>
-            <figcaption class="gallery-caption">
-              <div>
-                Decorando en familia
-                <div class="gallery-format">JPG</div>
-              </div>
-              <a
-                href="https://images.pexels.com/photos/669211/pexels-photo-669211.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                download
-                class="btn btn-ghost btn-sm"
-              >
-                Descargar
-              </a>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="note-box">
-          <strong>Recuerda:</strong> las URLs de ejemplo apuntan a imágenes libres de uso de bancos como Pexels,
-          pero lo mejor es que descargues los archivos, revises sus licencias, los subas a tu repositorio
-          (por ejemplo en <code>/assets</code>) y cambies los enlaces por rutas propias (ej: <code>assets/arbol-1.jpg</code>).
-        </div>
-      </div>
-    </section>
-
-    <!-- LICENCIAS + FAQ -->
-    <section id="licencias" class="section">
-      <div class="shell">
-        <header class="section-header">
-          <span class="section-kicker">Legal & proyecto</span>
-          <h2 class="section-title">Licencias de imágenes y preparación para AdSense</h2>
-          <p class="section-sub">
-            navidapam está pensado para crecer de forma limpia: respetando derechos de autor, usando imágenes
-            con licencias claras y preparando la base para monetización con Google AdSense.
-          </p>
-        </header>
-
-        <div class="badge-mini">
-          <span></span>
-          Checklist básico antes de solicitar AdSense
-        </div>
-
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3>1. Revisa las licencias de cada imagen</h3>
-            <p>
-              Descarga los recursos de bancos libres (Pexels, Unsplash, etc.), lee sus términos y
-              súbelos a tu propio repositorio. Evita usar imágenes con derechos restringidos o sin permiso.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>2. Añade páginas legales al proyecto</h3>
-            <p>
-              Crea archivos como <strong>aviso-legal.html</strong>, <strong>politica-privacidad.html</strong>
-              y <strong>politica-cookies.html</strong> y enlázalos desde el footer. Google valora que estén presentes.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>3. Envía tu sitio a Google Search Console</h3>
-            <p>
-              Una vez alojes navidapam en GitHub Pages y compres tu dominio, vincúlalo en Search Console
-              y pide indexación de la página principal y las secciones clave.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3>4. Solicita AdSense después de tener tráfico</h3>
-            <p>
-              Cuando el sitio tenga contenido original, páginas legales y algo de tráfico orgánico,
-              solicita tu cuenta de Google AdSense e integra el código donde está reservado en este HTML.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <div>
-        © <span id="year"></span> navidapam. Proyecto navideño premium.
-      </div>
-      <nav class="footer-links">
-        <a href="aviso-legal.html">Aviso legal</a>
-        <a href="politica-privacidad.html">Política de privacidad</a>
-        <a href="politica-cookies.html">Política de cookies</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Año dinámico
-      var yearSpan = document.getElementById("year");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-
-      // Menú móvil
-      var navToggle = document.getElementById("nav-toggle");
-      var navLinks = document.getElementById("nav-links");
-      if (navToggle && navLinks) {
-        navToggle.addEventListener("click", function () {
-          navLinks.classList.toggle("open");
-        });
-        navLinks.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            navLinks.classList.remove("open");
-          });
-        });
-      }
-
-      // Lógica cookies
-      var banner = document.getElementById("cookie-banner");
-      var modal = document.getElementById("cookie-modal");
-      var settingsBtn = document.getElementById("cookie-settings-btn");
-      var acceptAllBtn = document.getElementById("cookie-accept-all-btn");
-      var saveBtn = document.getElementById("cookie-save-btn");
-      var cancelBtn = document.getElementById("cookie-cancel-btn");
-      var adsCheckbox = document.getElementById("cookie-ads-checkbox");
-      var CONSENT_KEY = "navidapamCookieConsent";
-
-      function getConsent() {
-        try {
-          var value = localStorage.getItem(CONSENT_KEY);
-          return value ? JSON.parse(value) : null;
-        } catch (e) {
-          return null;
-        }
-      }
-
-      function setConsent(consent) {
-        try {
-          localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
-        } catch (e) {
-          console.warn("No se pudo guardar el consentimiento de cookies", e);
-        }
-      }
-
-      function showBanner() {
-        if (banner) banner.style.display = "flex";
-      }
-
-      function hideBanner() {
-        if (banner) banner.style.display = "none";
-      }
-
-      function showModal() {
-        if (modal) {
-          modal.style.display = "flex";
-          modal.setAttribute("aria-hidden", "false");
-        }
-      }
-
-      function hideModal() {
-        if (modal) {
-          modal.style.display = "none";
-          modal.setAttribute("aria-hidden", "true");
-        }
-      }
-
-      function activateAdsIfAllowed(consent) {
-        if (!consent) return;
-        if (consent.ads) {
-          console.log("Consentimiento de anuncios activado (cuando tengas AdSense, aquí puedes cargar el script).");
-          // EJEMPLO (cuando tengas tu ID):
-          // var script = document.createElement("script");
-          // script.async = true;
-          // script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=TU_ID_PUB";
-          // script.crossOrigin = "anonymous";
-          // document.head.appendChild(script);
-        } else {
-          console.log("Consentimiento de anuncios desactivado.");
-        }
-      }
-
-      var existingConsent = getConsent();
-      if (!existingConsent) {
-        showBanner();
-      } else {
-        activateAdsIfAllowed(existingConsent);
-      }
-
-      if (settingsBtn) {
-        settingsBtn.addEventListener("click", function () {
-          hideBanner();
-          showModal();
-        });
-      }
-
-      if (acceptAllBtn) {
-        acceptAllBtn.addEventListener("click", function () {
-          var consent = { necessary: true, ads: true };
-          setConsent(consent);
-          activateAdsIfAllowed(consent);
-          hideBanner();
-        });
-      }
-
-      if (cancelBtn) {
-        cancelBtn.addEventListener("click", function () {
-          hideModal();
-          if (!getConsent()) {
-            showBanner();
-          }
-        });
-      }
-
-      if (saveBtn) {
-        saveBtn.addEventListener("click", function () {
-          var consent = {
-            necessary: true,
-            ads: adsCheckbox ? adsCheckbox.checked : false
-          };
-          setConsent(consent);
-          activateAdsIfAllowed(consent);
-          hideModal();
-        });
-      }
-    });
-  </script>
 </body>
 </html>
