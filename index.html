@@ -3,496 +3,599 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOËL | The Premium Christmas Collection</title>
-    <!-- Fuentes Premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>NavidadPam | Recursos Exclusivos</title>
+    <meta name="description" content="Sitio oficial de NavidadPam. Imágenes, música y recursos navideños exclusivos con derechos de autor.">
+    
+    <!-- Google AdSense Code (Tu ID Personal) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4027729234815917"
+     crossorigin="anonymous"></script>
+
+    <!-- Google Fonts Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- 1. CONFIGURACIÓN VISUAL (ESTILO PREMIUM) --- */
         :root {
-            --gold: #C5A059;
-            --gold-light: #E5C585;
-            --dark: #121212;
-            --dark-green: #0B261D;
-            --white: #FFFFFF;
-            --gray: #F4F4F4;
-            --font-head: 'Cinzel', serif;
+            --primary: #8b0000; /* Rojo Vino */
+            --secondary: #123524; /* Verde Bosque Profundo */
+            --gold: #c5a059; /* Dorado Elegante */
+            --bg: #fdfbf7; /* Blanco Hueso */
+            --text: #2c2c2c;
+            --font-heading: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            background-color: var(--white);
             font-family: var(--font-body);
-            color: var(--dark);
+            background-color: var(--bg);
+            color: var(--text);
             overflow-x: hidden;
         }
 
-        /* --- 2. HEADER Y NAVEGACIÓN --- */
+        /* --- Header --- */
         header {
-            padding: 30px 5%;
+            background-color: #fff;
+            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
         }
 
-        .brand {
-            font-family: var(--font-head);
-            font-size: 2rem;
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary);
             font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--dark-green);
-        }
-
-        .weekly-badge {
-            background: var(--gold);
-            color: var(--white);
-            font-size: 0.7rem;
-            padding: 5px 10px;
-            border-radius: 2px;
-            text-transform: uppercase;
+            text-decoration: none;
             letter-spacing: 1px;
-            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        nav button {
-            background: none;
-            border: none;
+        .search-container {
+            position: relative;
+            width: 40%;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 2px solid #e0e0e0;
             font-family: var(--font-body);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-left: 20px;
-            cursor: pointer;
             transition: 0.3s;
         }
 
-        nav button:hover, nav button.active {
-            color: var(--gold);
+        .search-bar:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
         }
 
-        /* --- 3. HERO SECTION (PORTADA) --- */
+        .btn-premium {
+            background: linear-gradient(45deg, var(--primary), #a50000);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-premium:hover { transform: scale(1.05); }
+
+        /* --- Hero --- */
         .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1576919228236-a097c32a58be?q=80&w=2070&auto=format&fit=crop');
+            background: linear-gradient(rgba(18, 53, 36, 0.8), rgba(18, 53, 36, 0.8)), url('https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--white);
+            color: white;
+            padding: 20px;
+            margin-bottom: 30px;
         }
 
         .hero h1 {
-            font-family: var(--font-head);
-            font-size: 5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--gold);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
+        .hero p { font-size: 1.2rem; margin-top: 10px; max-width: 700px; }
 
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            animation: bounce 2s infinite;
+        /* --- AdSense Slots Styles --- */
+        .adsense-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background: #fff;
+            border: 1px dashed #ccc; /* Borde temporal para que veas dónde va */
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        
+        .adsense-label { color: #999; font-size: 12px; margin-bottom: 5px; display: block; }
 
-        /* --- 4. FILTROS --- */
+        /* --- Filters --- */
         .filters {
             display: flex;
             justify-content: center;
             gap: 15px;
-            padding: 50px 0;
             flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
-        .filter-btn {
-            padding: 12px 30px;
-            border: 1px solid var(--dark);
-            background: transparent;
+        .filter-item {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.4s ease;
         }
 
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--dark-green);
-            color: var(--white);
-            border-color: var(--dark-green);
-        }
-
-        /* --- 5. GALERÍA GRID MASONRY --- */
-        .gallery-container {
-            column-count: 3;
-            column-gap: 20px;
-            padding: 0 5% 50px 5%;
-        }
-
-        .item {
-            break-inside: avoid;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-            background: var(--gray);
-        }
-
-        .item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Overlay de descarga */
-        .overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(11, 38, 29, 0.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .item:hover .overlay { opacity: 1; }
-
-        .overlay h3 {
-            color: var(--gold);
-            font-family: var(--font-head);
-            margin-bottom: 10px;
-        }
-
-        .download-btn {
+        .filter-item:hover, .filter-item.active {
             background: var(--gold);
-            color: var(--white);
-            border: none;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            cursor: pointer;
+            color: white;
+            border-color: var(--gold);
+        }
+
+        /* --- Gallery --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover img { transform: scale(1.1); }
+
+        /* Marca de Agua de Derechos de Autor */
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            pointer-events: none;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .copyright-lock {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: var(--gold);
+            background: rgba(0,0,0,0.7);
+            padding: 5px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-info { padding: 20px; }
+
+        .card-cat {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin: 8px 0 15px 0;
+            color: var(--text);
+        }
+
+        .btn-download {
+            width: 100%;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
             align-items: center;
             gap: 8px;
         }
 
-        .download-btn:hover { background: var(--gold-light); color: var(--dark); }
+        .btn-download:hover { background-color: var(--primary); }
 
-        /* --- 6. SECCIÓN DE MÚSICA --- */
-        .music-section {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 60px 5%;
-            text-align: center;
-        }
-
-        .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .track {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            text-align: left;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .track-icon {
-            font-size: 2rem;
-            color: var(--gold);
-        }
-
-        .track-info h4 { font-family: var(--font-head); color: var(--white); margin-bottom: 5px; }
-        .track-info p { font-size: 0.8rem; color: #aaa; }
-
-        .track-download {
-            margin-left: auto;
-            color: var(--gold);
-            cursor: pointer;
-        }
-
-        /* --- 7. FOOTER Y LEGAL --- */
+        /* --- Footer --- */
         footer {
-            background: var(--dark-green);
-            color: rgba(255,255,255,0.7);
-            padding: 50px 5%;
+            background-color: #1a1a1a;
+            color: #888;
+            padding: 60px 20px 20px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 { color: white; margin-bottom: 20px; font-family: var(--font-heading); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a { color: #888; text-decoration: none; transition: 0.3s; }
+        .footer-col a:hover { color: var(--gold); }
+
+        .legal-warning {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 20px;
             text-align: center;
             font-size: 0.8rem;
-            border-top: 3px solid var(--gold);
         }
 
-        footer p { margin-bottom: 10px; }
-        .copyright-notice {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 0.7rem;
+        /* --- Modal & Cookies --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none; justify-content: center; align-items: center; z-index: 2000;
+        }
+        .modal-box {
+            background: white; padding: 40px; border-radius: 8px;
+            max-width: 450px; width: 90%; position: relative;
+            border-top: 5px solid var(--gold);
+        }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; }
+        
+        .cookie-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: white; padding: 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            display: flex; justify-content: center; align-items: center; gap: 20px;
+            z-index: 1500;
+            border-top: 4px solid var(--primary);
         }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .gallery-container { column-count: 1; }
-            header { flex-direction: column; gap: 15px; }
-            nav { display: flex; flex-wrap: wrap; justify-content: center; }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+        /* Mobile Responsive */
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .search-container { width: 100%; margin-top: 10px; order: 3; }
+            nav { flex-wrap: wrap; }
+            .btn-premium { display: none; }
+            .cookie-bar { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="brand">NOËL <span class="weekly-badge">Semana 48</span></div>
-        <nav>
-            <button class="filter-btn active" onclick="filterGallery('all')">Todo</button>
-            <button class="filter-btn" onclick="filterGallery('decor')">Decoración</button>
-            <button class="filter-btn" onclick="filterGallery('moda')">Moda</button>
-            <button class="filter-btn" onclick="filterGallery('toys')">Juguetes</button>
-            <button class="filter-btn" onclick="scrollToMusic()">Música</button>
-        </nav>
-    </header>
+    <!-- Navegación -->
+    <nav>
+        <a href="#" class="logo"><i class="fas fa-holly-berry"></i> navidadpam</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar: fondos, música, ropa..." onkeyup="handleSearch(event)">
+        </div>
+        <button class="btn-premium" onclick="openModal('loginModal')">
+            <i class="fas fa-user-circle"></i> Iniciar Sesión
+        </button>
+    </nav>
 
-    <!-- Portada -->
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>La Magia de la Navidad</h1>
-        <p>Colección Exclusiva de Imágenes y Recursos</p>
-        <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+        <h1>NavidadPam Premium</h1>
+        <p>Galería exclusiva con Derechos de Autor. <br>Arte, moda y decoración de alta gama.</p>
     </section>
 
-    <!-- Filtros Botones Mobile (Visible debajo del hero también) -->
-    <div class="filters">
-        <button class="filter-btn active" onclick="filterGallery('all')">Ver Todo</button>
-        <button class="filter-btn" onclick="filterGallery('decor')">Decoración de Lujo</button>
-        <button class="filter-btn" onclick="filterGallery('moda')">Trajes & Ropa</button>
-        <button class="filter-btn" onclick="filterGallery('dibujo')">Arte & Dibujo</button>
+    <!-- ANUNCIO GOOGLE ADSENSE (Ubicación Superior) -->
+    <div class="adsense-container">
+        <span class="adsense-label">Publicidad</span>
+        
+        <!-- Pega aquí el código de BLOQUE DE ANUNCIOS de tu panel de AdSense -->
+        <!-- Ejemplo:
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4027729234815917"
+             data-ad-slot="NUMERO_DE_TU_BLOQUE_AQUI"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        -->
+        <p style="color:#ccc;">Espacio para Bloque de Anuncios (Responsive)</p>
     </div>
 
-    <!-- Galería Principal -->
-    <section class="gallery-container" id="gallery">
-        <!-- Imagen 1: Decoración -->
-        <div class="item decor">
-            <img src="https://images.unsplash.com/photo-1543258103-a62bdc069871?q=80&w=1974&auto=format&fit=crop" alt="Arbol de Lujo">
-            <div class="overlay">
-                <h3>Decoración Gold</h3>
-                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1543258103-a62bdc069871?q=80&w=1974&auto=format&fit=crop', 'decoracion_navidad_gold.jpg')">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </div>
-        </div>
+    <!-- Filtros -->
+    <div class="filters">
+        <button class="filter-item active" onclick="filterData('todo')">Todo</button>
+        <button class="filter-item" onclick="filterData('wallpapers')">Fondos</button>
+        <button class="filter-item" onclick="filterData('ropa')">Ropa & Trajes</button>
+        <button class="filter-item" onclick="filterData('decoracion')">Decoración</button>
+        <button class="filter-item" onclick="filterData('musica')">Música</button>
+        <button class="filter-item" onclick="filterData('dibujos')">Arte & Dibujos</button>
+    </div>
 
-        <!-- Imagen 2: Ropa -->
-        <div class="item moda">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop" alt="Moda Invierno">
-            <div class="overlay">
-                <h3>Alta Costura Invernal</h3>
-                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop', 'moda_navidad.jpg')">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </div>
-        </div>
+    <!-- Galería -->
+    <main class="gallery" id="galleryGrid">
+        <!-- El contenido se carga con JS -->
+    </main>
 
-        <!-- Imagen 3: Juguetes -->
-        <div class="item toys">
-            <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1974&auto=format&fit=crop" alt="Regalos y Juguetes">
-            <div class="overlay">
-                <h3>Juguetes Clásicos</h3>
-                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1974&auto=format&fit=crop', 'juguetes_navidad.jpg')">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </div>
-        </div>
-
-        <!-- Imagen 4: Dibujo/Arte -->
-        <div class="item dibujo">
-            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcf8?q=80&w=2080&auto=format&fit=crop" alt="Arte Navideño">
-            <div class="overlay">
-                <h3>Arte & Galletas</h3>
-                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1576618148400-f54bed99fcf8?q=80&w=2080&auto=format&fit=crop', 'arte_navidad.jpg')">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </div>
-        </div>
-
-        <!-- Imagen 5: Decoración 2 -->
-        <div class="item decor">
-            <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&w=2069&auto=format&fit=crop" alt="Mesa Navideña">
-            <div class="overlay">
-                <h3>Cena de Gala</h3>
-                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&w=2069&auto=format&fit=crop', 'cena_gala.jpg')">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </div>
-        </div>
-         <!-- Imagen 6: Ropa 2 -->
-         <div class="item moda">
-            <img src="https://images.unsplash.com/photo-1543322748-33df6d3d29be?q=80&w=2056&auto=format&fit=crop" alt="Sueter Navidad">
-            <div class="overlay">
-                <h3>Tejidos Cálidos</h3>
-                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1543322748-33df6d3d29be?q=80&w=2056&auto=format&fit=crop', 'tejidos_navidad.jpg')">
-                    <i class="fas fa-download"></i> Descargar
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Música -->
-    <section class="music-section" id="music">
-        <h2 style="font-family: var(--font-head); font-size: 2.5rem; color: var(--gold);">Colección Musical</h2>
-        <p>Sonidos licenciados para ambientar tus fiestas.</p>
-        
-        <div class="music-grid">
-            <div class="track">
-                <div class="track-icon"><i class="fas fa-music"></i></div>
-                <div class="track-info">
-                    <h4>Silent Night (Piano)</h4>
-                    <p>Instrumental - Licencia Premium</p>
-                    <!-- Audio Player HTML5 (Usando un ejemplo libre de regalías para demo) -->
-                    <audio controls style="width: 200px; margin-top:10px; height: 30px;">
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="track-download" onclick="downloadItem('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'Silent_Night_Premium.mp3')">
-                    <i class="fas fa-cloud-download-alt fa-lg"></i>
-                </div>
-            </div>
-
-            <div class="track">
-                <div class="track-icon"><i class="fas fa-broadcast-tower"></i></div>
-                <div class="track-info">
-                    <h4>Jingle Bells Jazz</h4>
-                    <p>Jazz Cover - Licencia Premium</p>
-                    <audio controls style="width: 200px; margin-top:10px; height: 30px;">
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="track-download" onclick="downloadItem('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', 'Jingle_Jazz.mp3')">
-                    <i class="fas fa-cloud-download-alt fa-lg"></i>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ANUNCIO GOOGLE ADSENSE (Ubicación Inferior) -->
+    <div class="adsense-container">
+        <span class="adsense-label">Publicidad</span>
+        <!-- Pega aquí OTRO código de bloque de anuncios diferente -->
+         <p style="color:#ccc;">Espacio para Bloque de Anuncios (Banner Inferior)</p>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <h2 class="brand" style="color: var(--gold);">NOËL</h2>
-        <p>Actualización Semanal | Cada Viernes nuevo contenido</p>
-        
-        <div class="copyright-notice">
-            <p><strong>Aviso Legal & Derechos de Autor</strong></p>
-            <p>Todo el material visual y sonoro disponible en esta plataforma cuenta con licencias comerciales vigentes o son de dominio público.</p>
-            <p>© 2023 NOËL Collection. Todos los derechos reservados.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Sobre Nosotros</h3>
+                <p>NavidadPam es la plataforma líder en recursos navideños de alta calidad. Todas las imágenes están protegidas por derechos de autor.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#" onclick="openModal('privacyModal')">Política de Privacidad</a></li>
+                    <li><a href="#" onclick="openModal('termsModal')">Términos de Uso</a></li>
+                    <li><a href="#">Licencias de Copyright</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Soporte Técnico</a></li>
+                    <li><a href="#">Reportar Abuso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="legal-warning">
+            <p>&copy; 2023-2024 NavidadPam. Todos los derechos reservados.</p>
+            <p>El uso no autorizado de los materiales de este sitio está estrictamente prohibido.</p>
         </div>
     </footer>
 
-    <!-- Script de Funcionalidad -->
+    <!-- Cookie Banner -->
+    <div class="cookie-bar" id="cookieBanner">
+        <p>Usamos cookies y Google AdSense para personalizar su experiencia. Al continuar, acepta nuestras políticas.</p>
+        <button class="btn-premium" onclick="acceptCookies()">Aceptar Todo</button>
+    </div>
+
+    <!-- MODALES -->
+    <!-- Login -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="color:var(--primary); text-align:center; margin-bottom:20px;">Acceso Miembros</h2>
+            <form onsubmit="event.preventDefault(); alert('Login Simulado Exitoso'); closeModal('loginModal');">
+                <input type="email" placeholder="Email" style="width:100%; padding:10px; margin-bottom:10px;" required>
+                <input type="password" placeholder="Contraseña" style="width:100%; padding:10px; margin-bottom:20px;" required>
+                <button class="btn-download">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Privacy -->
+    <div id="privacyModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal('privacyModal')">&times;</span>
+            <h3>Política de Privacidad</h3>
+            <p style="font-size:0.9rem; margin-top:10px; line-height:1.6;">
+                Cumplimos con GDPR y CCPA. Utilizamos <strong>Google AdSense</strong> (ID: ca-pub-4027729234815917) para mostrar publicidad. Google utiliza cookies para servir anuncios basados en visitas anteriores.<br><br>
+                Los datos de navegación son anónimos. No vendemos su información personal a terceros.
+            </p>
+        </div>
+    </div>
+
+    <!-- Terms -->
+    <div id="termsModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal('termsModal')">&times;</span>
+            <h3>Términos y Copyright</h3>
+            <p style="font-size:0.9rem; margin-top:10px; line-height:1.6;">
+                <strong>1. Derechos de Autor:</strong> Todo el contenido visual (imágenes, diseños, trajes) mostrado en NavidadPam es propiedad exclusiva o tiene licencia de uso.<br>
+                <strong>2. Uso Permitido:</strong> La descarga es solo para uso personal no comercial.<br>
+                <strong>3. Prohibiciones:</strong> Está prohibido subir este contenido a otras webs o venderlo.
+            </p>
+        </div>
+    </div>
+
     <script>
-        // 1. Lógica de Filtrado
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.item');
-            const buttons = document.querySelectorAll('.filter-btn');
+        // --- BASE DE DATOS DE RECURSOS (Simulada con imágenes de alta calidad) ---
+        // Se añade marca de agua en el renderizado para simular copyright.
+        const resources = [
+            { id: 1, type: 'wallpapers', title: 'Paisaje Nórdico', url: 'https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=600&q=80', tags: 'nieve fondo paisaje' },
+            { id: 2, type: 'ropa', title: 'Colección Santa Premium', url: 'https://images.unsplash.com/photo-1575416240030-221299c5c7fa?w=600&q=80', tags: 'traje ropa gorro rojo' },
+            { id: 3, type: 'decoracion', title: 'Mesa de Cena Dorada', url: 'https://images.unsplash.com/photo-1576072446584-488778d9ebce?w=600&q=80', tags: 'cena mesa decoracion oro' },
+            { id: 4, type: 'musica', title: 'Villancicos Clásicos', url: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80', tags: 'musica partitura audio' },
+            { id: 5, type: 'dibujos', title: 'Ilustración Vintage', url: 'https://images.unsplash.com/photo-1577046849491-b125974051a8?w=600&q=80', tags: 'arte dibujo pintura' },
+            { id: 6, type: 'wallpapers', title: 'Luces de Ciudad', url: 'https://images.unsplash.com/photo-1519962551779-51006509c392?w=600&q=80', tags: 'luces noche fondo' },
+            { id: 7, type: 'ropa', title: 'Suéter Tejido a Mano', url: 'https://images.unsplash.com/photo-1606411786522-37887707e492?w=600&q=80', tags: 'ropa sueter lana' },
+            { id: 8, type: 'decoracion', title: 'Árbol Minimalista', url: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=600&q=80', tags: 'arbol decoracion' },
+            // Duplicamos datos para llenar la búsqueda
+            { id: 9, type: 'wallpapers', title: 'Bosque Encantado', url: 'https://images.unsplash.com/photo-1482393352697-3f94bd2d6da6?w=600&q=80', tags: 'bosque fondo' },
+            { id: 10, type: 'decoracion', title: 'Esferas de Cristal', url: 'https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=600&q=80', tags: 'esferas cristal rojo' },
+            { id: 11, type: 'musica', title: 'Jazz Navideño', url: 'https://images.unsplash.com/photo-1459749411177-0473ef716175?w=600&q=80', tags: 'musica jazz' },
+            { id: 12, type: 'ropa', title: 'Pijamas Familiares', url: 'https://images.unsplash.com/photo-1542044896530-05d85be9b11a?w=600&q=80', tags: 'ropa pijama familia' }
+        ];
 
-            // Actualizar botones activos
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        // --- LÓGICA DE VISUALIZACIÓN ---
+        const gallery = document.getElementById('galleryGrid');
 
-            // Filtrar items
+        function renderResources(items) {
+            gallery.innerHTML = '';
+            if(items.length === 0) {
+                gallery.innerHTML = '<p style="grid-column:1/-1; text-align:center;">No se encontraron resultados.</p>';
+                return;
+            }
+
             items.forEach(item => {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    if (item.classList.contains(category)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
+                const card = document.createElement('div');
+                card.className = 'card';
+                // La estructura incluye la marca de agua (watermark) y el candado
+                card.innerHTML = `
+                    <div class="img-wrapper">
+                        <div class="copyright-lock"><i class="fas fa-lock"></i></div>
+                        <img src="${item.url}" alt="${item.title}" loading="lazy">
+                        <div class="watermark">&copy; NavidadPam Premium</div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-cat">${item.type}</div>
+                        <h4 class="card-title">${item.title}</h4>
+                        <button class="btn-download" onclick="downloadFile('${item.url}', '${item.title}')">
+                            <i class="fas fa-cloud-download-alt"></i> Descargar (HD)
+                        </button>
+                    </div>
+                `;
+                gallery.appendChild(card);
             });
         }
 
-        function scrollToMusic() {
-            document.getElementById('music').scrollIntoView({behavior: 'smooth'});
-        }
-
-        // 2. Lógica de Descarga Directa (Force Download)
-        // Esta función intenta descargar el archivo como blob para guardarlo directamente
-        async function downloadItem(url, filename) {
-            try {
-                // Crear feedback visual de carga
-                const btn = event.currentTarget;
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
-
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Network response was not ok');
-                
-                const blob = await response.blob();
-                const blobUrl = window.URL.createObjectURL(blob);
-                
-                const link = document.createElement('a');
-                link.href = blobUrl;
-                link.download = filename;
-                
-                document.body.appendChild(link);
-                link.click();
-                
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(blobUrl);
-
-                // Restaurar botón
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                }, 1000);
-
-            } catch (error) {
-                console.error('Error en descarga:', error);
-                // Fallback para navegadores que bloqueen fetch de dominios externos
-                const link = document.createElement('a');
-                link.href = url;
-                link.target = "_blank";
-                link.download = filename;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                alert("La descarga se ha abierto en una pestaña nueva debido a permisos del navegador.");
+        // --- BUSCADOR ---
+        function handleSearch(e) {
+            if(e.key === 'Enter' || e.type === 'keyup') {
+                const val = document.getElementById('searchInput').value.toLowerCase();
+                // Filtrar para mostrar al menos 10 si coinciden
+                const filtered = resources.filter(r => 
+                    r.title.toLowerCase().includes(val) || 
+                    r.tags.includes(val) ||
+                    r.type.includes(val)
+                );
+                renderResources(filtered);
             }
         }
+
+        // --- FILTROS ---
+        function filterData(type) {
+            document.querySelectorAll('.filter-item').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if(type === 'todo') {
+                renderResources(resources);
+            } else {
+                const filtered = resources.filter(r => r.type === type);
+                renderResources(filtered);
+            }
+        }
+
+        // --- DESCARGAR ---
+        async function downloadFile(url, title) {
+            // Simulamos descarga de archivo protegido
+            const btn = event.currentTarget;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+            
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                const objUrl = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = objUrl;
+                link.download = `NavidadPam-Copyrighted-${title.replace(/\s/g, '-')}.jpg`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-check"></i> ¡Guardado!';
+                    setTimeout(() => btn.innerHTML = '<i class="fas fa-cloud-download-alt"></i> Descargar (HD)', 2000);
+                }, 500);
+
+            } catch (e) {
+                // Si falla por CORS (común en local), abrir en pestaña nueva
+                window.open(url, '_blank');
+                btn.innerHTML = 'Abriendo...';
+            }
+        }
+
+        // --- COOKIES ---
+        if(localStorage.getItem('cookiesNavidadPam')) {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesNavidadPam', 'true');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // --- MODALES ---
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        
+        // Cerrar al click fuera
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Iniciar
+        renderResources(resources);
+
     </script>
 </body>
 </html>
