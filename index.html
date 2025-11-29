@@ -1,281 +1,498 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>navidapam • Navidad Premium</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOËL | The Premium Christmas Collection</title>
+    <!-- Fuentes Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <meta name="description" content="navidapam: sitio navideño premium con decoración, ropa, ideas, recursos originales, imágenes reales descargables y contenido optimizado para Google Search y Google AdSense." />
-  <meta name="theme-color" content="#B60000" />
+    <style>
+        /* --- 1. CONFIGURACIÓN VISUAL (ESTILO PREMIUM) --- */
+        :root {
+            --gold: #C5A059;
+            --gold-light: #E5C585;
+            --dark: #121212;
+            --dark-green: #0B261D;
+            --white: #FFFFFF;
+            --gray: #F4F4F4;
+            --font-head: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4027729234815917"
-    crossorigin="anonymous"></script>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-  <!-- Estilo Premium Tradicional (Rojo - Verde - Dorado) -->
-  <style>
-    body {
-      font-family: "Segoe UI", system-ui, sans-serif;
-      margin: 0;
-      background: #faf9f8;
-      color: #333;
-    }
+        /* --- 2. HEADER Y NAVEGACIÓN --- */
+        header {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
 
-    header {
-      background: linear-gradient(to right, #b60000, #d20000);
-      padding: 20px;
-      color: white;
-      text-align: center;
-      border-bottom: 5px solid gold;
-    }
+        .brand {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--dark-green);
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #8a0000;
-      padding: 10px;
-    }
+        .weekly-badge {
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.7rem;
+            padding: 5px 10px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 10px;
+        }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        nav button {
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    h2 {
-      color: #b60000;
-      border-left: 8px solid gold;
-      padding-left: 10px;
-    }
+        nav button:hover, nav button.active {
+            color: var(--gold);
+        }
 
-    .section {
-      max-width: 1050px;
-      margin: auto;
-      padding: 30px 15px;
-    }
+        /* --- 3. HERO SECTION (PORTADA) --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1576919228236-a097c32a58be?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+        .hero h1 {
+            font-family: var(--font-head);
+            font-size: 5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+        .hero p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
 
-    .card img {
-      width: 100%;
-    }
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+        }
 
-    .card a {
-      display: block;
-      background: #b60000;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        /* --- 4. FILTROS --- */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 50px 0;
+            flex-wrap: wrap;
+        }
 
-    footer {
-      margin-top: 50px;
-      background: #111;
-      color: #ddd;
-      padding: 25px;
-      text-align: center;
-      font-size: 14px;
-    }
+        .filter-btn {
+            padding: 12px 30px;
+            border: 1px solid var(--dark);
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
 
-    /* Estilos legales */
-    .legal-box {
-      background: #fff5f5;
-      border: 1px solid #ffd2d2;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--dark-green);
+            color: var(--white);
+            border-color: var(--dark-green);
+        }
 
-    pre {
-      background: #f0f0f0;
-      padding: 15px;
-      white-space: pre-wrap;
-      border-radius: 10px;
-      overflow: auto;
-    }
-  </style>
+        /* --- 5. GALERÍA GRID MASONRY --- */
+        .gallery-container {
+            column-count: 3;
+            column-gap: 20px;
+            padding: 0 5% 50px 5%;
+        }
+
+        .item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            background: var(--gray);
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay de descarga */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(11, 38, 29, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .item:hover .overlay { opacity: 1; }
+
+        .overlay h3 {
+            color: var(--gold);
+            font-family: var(--font-head);
+            margin-bottom: 10px;
+        }
+
+        .download-btn {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover { background: var(--gold-light); color: var(--dark); }
+
+        /* --- 6. SECCIÓN DE MÚSICA --- */
+        .music-section {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .track {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .track-icon {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .track-info h4 { font-family: var(--font-head); color: var(--white); margin-bottom: 5px; }
+        .track-info p { font-size: 0.8rem; color: #aaa; }
+
+        .track-download {
+            margin-left: auto;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        /* --- 7. FOOTER Y LEGAL --- */
+        footer {
+            background: var(--dark-green);
+            color: rgba(255,255,255,0.7);
+            padding: 50px 5%;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 3px solid var(--gold);
+        }
+
+        footer p { margin-bottom: 10px; }
+        .copyright-notice {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.7rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .gallery-container { column-count: 1; }
+            header { flex-direction: column; gap: 15px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>🎄 navidapam • Navidad Premium 🎁</h1>
-  <p>El sitio navideño más completo: decoración, ideas, ropa, diseño y recursos descargables para tus fiestas.</p>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="brand">NOËL <span class="weekly-badge">Semana 48</span></div>
+        <nav>
+            <button class="filter-btn active" onclick="filterGallery('all')">Todo</button>
+            <button class="filter-btn" onclick="filterGallery('decor')">Decoración</button>
+            <button class="filter-btn" onclick="filterGallery('moda')">Moda</button>
+            <button class="filter-btn" onclick="filterGallery('toys')">Juguetes</button>
+            <button class="filter-btn" onclick="scrollToMusic()">Música</button>
+        </nav>
+    </header>
 
-<nav>
-  <a href="#decoracion">Decoración</a>
-  <a href="#ropa">Ropa navideña</a>
-  <a href="#galeria">Galería Premium</a>
-  <a href="#legal">Legal</a>
-</nav>
+    <!-- Portada -->
+    <section class="hero">
+        <h1>La Magia de la Navidad</h1>
+        <p>Colección Exclusiva de Imágenes y Recursos</p>
+        <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+    </section>
 
-<!-- DECORACIÓN -->
-<section class="section" id="decoracion">
-  <h2>Decoración navideña premium</h2>
-  <p>
-    La Navidad es más que una fecha: es un ambiente. Esta sección reúne inspiración real,
-    con fotografías premium, cálidas y estéticas para que puedas recrear espacios elegantes,
-    acogedores y totalmente festivos.
-  </p>
-
-  <div class="gallery">
-    <div class="card">
-      <img src="https://images.pexels.com/photos/257855/pexels-photo-257855.jpeg" alt="Árbol premium con dorados">
-      <a download href="https://images.pexels.com/photos/257855/pexels-photo-257855.jpeg">Descargar imagen</a>
+    <!-- Filtros Botones Mobile (Visible debajo del hero también) -->
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterGallery('all')">Ver Todo</button>
+        <button class="filter-btn" onclick="filterGallery('decor')">Decoración de Lujo</button>
+        <button class="filter-btn" onclick="filterGallery('moda')">Trajes & Ropa</button>
+        <button class="filter-btn" onclick="filterGallery('dibujo')">Arte & Dibujo</button>
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg" alt="Mesa navideña elegante">
-      <a download href="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg">Descargar imagen</a>
-    </div>
+    <!-- Galería Principal -->
+    <section class="gallery-container" id="gallery">
+        <!-- Imagen 1: Decoración -->
+        <div class="item decor">
+            <img src="https://images.unsplash.com/photo-1543258103-a62bdc069871?q=80&w=1974&auto=format&fit=crop" alt="Arbol de Lujo">
+            <div class="overlay">
+                <h3>Decoración Gold</h3>
+                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1543258103-a62bdc069871?q=80&w=1974&auto=format&fit=crop', 'decoracion_navidad_gold.jpg')">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+        </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/7542624/pexels-photo-7542624.jpeg" alt="Fachada navideña">
-      <a download href="https://images.pexels.com/photos/7542624/pexels-photo-7542624.jpeg">Descargar imagen</a>
-    </div>
-  </div>
-</section>
+        <!-- Imagen 2: Ropa -->
+        <div class="item moda">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop" alt="Moda Invierno">
+            <div class="overlay">
+                <h3>Alta Costura Invernal</h3>
+                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop', 'moda_navidad.jpg')">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+        </div>
 
-<!-- ROPA -->
-<section class="section" id="ropa">
-  <h2>Ropa navideña premium</h2>
-  <p>
-    Outfits cálidos, familiares y fotogénicos para que tus celebraciones tengan estilo.
-    Desde suéteres clásicos hasta pijamas familiares para fotos memorables.
-  </p>
+        <!-- Imagen 3: Juguetes -->
+        <div class="item toys">
+            <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1974&auto=format&fit=crop" alt="Regalos y Juguetes">
+            <div class="overlay">
+                <h3>Juguetes Clásicos</h3>
+                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1974&auto=format&fit=crop', 'juguetes_navidad.jpg')">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+        </div>
 
-  <div class="gallery">
-    <div class="card">
-      <img src="https://images.pexels.com/photos/14930843/pexels-photo-14930843.jpeg" alt="Familia con suéteres">
-      <a download href="https://images.pexels.com/photos/14930843/pexels-photo-14930843.jpeg">Descargar imagen</a>
-    </div>
+        <!-- Imagen 4: Dibujo/Arte -->
+        <div class="item dibujo">
+            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcf8?q=80&w=2080&auto=format&fit=crop" alt="Arte Navideño">
+            <div class="overlay">
+                <h3>Arte & Galletas</h3>
+                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1576618148400-f54bed99fcf8?q=80&w=2080&auto=format&fit=crop', 'arte_navidad.jpg')">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+        </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/19826614/pexels-photo-19826614.jpeg" alt="Pijamas familiares navideñas">
-      <a download href="https://images.pexels.com/photos/19826614/pexels-photo-19826614.jpeg">Descargar imagen</a>
-    </div>
+        <!-- Imagen 5: Decoración 2 -->
+        <div class="item decor">
+            <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&w=2069&auto=format&fit=crop" alt="Mesa Navideña">
+            <div class="overlay">
+                <h3>Cena de Gala</h3>
+                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&w=2069&auto=format&fit=crop', 'cena_gala.jpg')">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+        </div>
+         <!-- Imagen 6: Ropa 2 -->
+         <div class="item moda">
+            <img src="https://images.unsplash.com/photo-1543322748-33df6d3d29be?q=80&w=2056&auto=format&fit=crop" alt="Sueter Navidad">
+            <div class="overlay">
+                <h3>Tejidos Cálidos</h3>
+                <button class="download-btn" onclick="downloadItem('https://images.unsplash.com/photo-1543322748-33df6d3d29be?q=80&w=2056&auto=format&fit=crop', 'tejidos_navidad.jpg')">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/5708050/pexels-photo-5708050.jpeg" alt="Accesorios navideños">
-      <a download href="https://images.pexels.com/photos/5708050/pexels-photo-5708050.jpeg">Descargar imagen</a>
-    </div>
-  </div>
-</section>
+    <!-- Sección de Música -->
+    <section class="music-section" id="music">
+        <h2 style="font-family: var(--font-head); font-size: 2.5rem; color: var(--gold);">Colección Musical</h2>
+        <p>Sonidos licenciados para ambientar tus fiestas.</p>
+        
+        <div class="music-grid">
+            <div class="track">
+                <div class="track-icon"><i class="fas fa-music"></i></div>
+                <div class="track-info">
+                    <h4>Silent Night (Piano)</h4>
+                    <p>Instrumental - Licencia Premium</p>
+                    <!-- Audio Player HTML5 (Usando un ejemplo libre de regalías para demo) -->
+                    <audio controls style="width: 200px; margin-top:10px; height: 30px;">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="track-download" onclick="downloadItem('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'Silent_Night_Premium.mp3')">
+                    <i class="fas fa-cloud-download-alt fa-lg"></i>
+                </div>
+            </div>
 
-<!-- GALERÍA -->
-<section class="section" id="galeria">
-  <h2>Galería Premium Descargable</h2>
-  <p>
-    Imágenes reales en alta calidad, libres para uso comercial, perfectas para decorar, compartir,
-    imprimir o usar en tus proyectos. Cada fotografía proviene de bancos libres autorizados.
-  </p>
+            <div class="track">
+                <div class="track-icon"><i class="fas fa-broadcast-tower"></i></div>
+                <div class="track-info">
+                    <h4>Jingle Bells Jazz</h4>
+                    <p>Jazz Cover - Licencia Premium</p>
+                    <audio controls style="width: 200px; margin-top:10px; height: 30px;">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="track-download" onclick="downloadItem('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', 'Jingle_Jazz.mp3')">
+                    <i class="fas fa-cloud-download-alt fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="gallery">
-    <div class="card">
-      <img src="https://images.pexels.com/photos/1303090/pexels-photo-1303090.jpeg" alt="Regalos premium">
-      <a download href="https://images.pexels.com/photos/1303090/pexels-photo-1303090.jpeg">Descargar imagen</a>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <h2 class="brand" style="color: var(--gold);">NOËL</h2>
+        <p>Actualización Semanal | Cada Viernes nuevo contenido</p>
+        
+        <div class="copyright-notice">
+            <p><strong>Aviso Legal & Derechos de Autor</strong></p>
+            <p>Todo el material visual y sonoro disponible en esta plataforma cuenta con licencias comerciales vigentes o son de dominio público.</p>
+            <p>© 2023 NOËL Collection. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/760810/pexels-photo-760810.jpeg" alt="Chocolate navideño">
-      <a download href="https://images.pexels.com/photos/760810/pexels-photo-760810.jpeg">Descargar imagen</a>
-    </div>
+    <!-- Script de Funcionalidad -->
+    <script>
+        // 1. Lógica de Filtrado
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.item');
+            const buttons = document.querySelectorAll('.filter-btn');
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg" alt="Guirnalda navideña">
-      <a download href="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg">Descargar imagen</a>
-    </div>
-  </div>
-</section>
+            // Actualizar botones activos
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-<!-- SECCIÓN LEGAL COMPLETA -->
-<section class="section" id="legal">
-  <h2>Información Legal</h2>
+            // Filtrar items
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
 
-  <!-- AVISO LEGAL -->
-  <div class="legal-box">
-    <h3>Aviso Legal</h3>
-    <p>
-      El sitio web <strong>navidapam.online</strong> es un proyecto personal, sin relación con
-      marcas, empresas o instituciones externas. Todo el contenido generado en esta página es
-      original o utiliza material libre de derechos (Pexels/Unsplash) permitido para uso comercial.
-    </p>
-    <p>
-      El usuario se compromete a utilizar esta web conforme a la legislación vigente.
-    </p>
-  </div>
+        function scrollToMusic() {
+            document.getElementById('music').scrollIntoView({behavior: 'smooth'});
+        }
 
-  <!-- POLÍTICA DE PRIVACIDAD -->
-  <div class="legal-box">
-    <h3>Política de Privacidad</h3>
-    <p>
-      En navidapam respetamos tu privacidad. Esta página puede utilizar cookies técnicas,
-      analíticas y, si das tu consentimiento, cookies publicitarias (Google AdSense).
-    </p>
-    <p>
-      No se recopilan datos personales identificables salvo que el usuario decida comunicarse
-      voluntariamente a través de formularios externos.
-    </p>
-  </div>
+        // 2. Lógica de Descarga Directa (Force Download)
+        // Esta función intenta descargar el archivo como blob para guardarlo directamente
+        async function downloadItem(url, filename) {
+            try {
+                // Crear feedback visual de carga
+                const btn = event.currentTarget;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
 
-  <!-- POLÍTICA DE COOKIES -->
-  <div class="legal-box">
-    <h3>Política de Cookies</h3>
-    <p>
-      Este sitio utiliza cookies para mejorar la experiencia de navegación y mostrar anuncios personalizados.
-    </p>
-    <ul>
-      <li>Cookies necesarias: funcionamiento básico de la web.</li>
-      <li>Cookies analíticas: anónimas, para medir tráfico.</li>
-      <li>Cookies publicitarias: Google AdSense.</li>
-    </ul>
-  </div>
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.href = blobUrl;
+                link.download = filename;
+                
+                document.body.appendChild(link);
+                link.click();
+                
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(blobUrl);
 
-  <!-- ROBOTS.TXT DESCARGABLE -->
-  <h3>Archivo robots.txt</h3>
-  <pre>
-User-agent: *
-Allow: /
-Sitemap: https://navidapam.online/sitemap.xml
-  </pre>
+                // Restaurar botón
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 1000);
 
-  <!-- SITEMAP.XML DESCARGABLE -->
-  <h3>Archivo sitemap.xml</h3>
-  <pre>
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://navidapam.online/</loc>
-    <priority>1.00</priority>
-  </url>
-</urlset>
-  </pre>
-
-</section>
-
-<footer>
-  © <span id="year"></span> navidapam — Sitio navideño premium.
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+            } catch (error) {
+                console.error('Error en descarga:', error);
+                // Fallback para navegadores que bloqueen fetch de dominios externos
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = "_blank";
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                alert("La descarga se ha abierto en una pestaña nueva debido a permisos del navegador.");
+            }
+        }
+    </script>
 </body>
 </html>
